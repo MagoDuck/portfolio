@@ -18,7 +18,7 @@ export default function Navbar() {
               href="#projetos"
               className="text-gray-400 hover:text-blue-400 transition-colors duration-300 font-medium hover:border-b-2 hover:border-blue-400 pb-1"
             >
-              projetos
+              Projetos
             </Link>
           </li>
 
@@ -27,7 +27,7 @@ export default function Navbar() {
               href="#skills"
               className="text-gray-400 hover:text-blue-400 transition-colors duration-300 font-medium hover:border-b-2 hover:border-blue-400 pb-1"
             >
-              skills
+              Skills
             </Link>
           </li>
 
@@ -36,7 +36,7 @@ export default function Navbar() {
               href="#experiencia"
               className="text-gray-400 hover:text-blue-400 transition-colors duration-300 font-medium hover:border-b-2 hover:border-blue-400 pb-1"
             >
-              experiência
+              Experiência
             </Link>
           </li>
 
@@ -45,7 +45,7 @@ export default function Navbar() {
               href="#contato"
               className="text-gray-400 hover:text-blue-400 transition-colors duration-300 font-medium hover:border-b-2 hover:border-blue-400 pb-1"
             >
-              contato
+              Contato
             </Link>
           </li>
         </ul>
