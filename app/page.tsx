@@ -54,12 +54,64 @@ export default function Home() {
   ]
 
   return (
-    <main className="relative bg-gradient-to-b from-black via-black to-blue-950/20 min-h-screen overflow-hidden">
-      {/* Luzes decorativas */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/5 via-transparent to-transparent"></div>
-      <div className="absolute inset-0 bg-gradient-to-bl from-blue-500/10 via-transparent to-transparent"></div>
-      <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-blue-600/20 to-transparent transform -skew-x-12"></div>
-      <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-blue-500/15 to-transparent transform -skew-y-6"></div>
+    <main className="relative bg-black min-h-screen overflow-hidden">
+      {/* Fundo universo com estrelas */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-purple-950/30"></div>
+      
+      {/* Estrelas */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(50)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute rounded-full bg-white animate-twinkle"
+            style={{
+              width: `${Math.random() * 3}px`,
+              height: `${Math.random() * 3}px`,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${2 + Math.random() * 3}s`,
+              opacity: 0.3 + Math.random() * 0.7
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Faixas diagonais - Roxo */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+        <div 
+          className="absolute w-[150%] h-[30%] bg-gradient-to-r from-purple-600/20 via-purple-500/10 to-transparent transform -rotate-45 -translate-x-1/2"
+          style={{ top: '-10%', left: '-20%' }}
+        ></div>
+        <div 
+          className="absolute w-[150%] h-[25%] bg-gradient-to-r from-purple-500/15 via-purple-400/5 to-transparent transform -rotate-45"
+          style={{ top: '30%', left: '-25%' }}
+        ></div>
+        <div 
+          className="absolute w-[150%] h-[20%] bg-gradient-to-r from-purple-600/10 via-transparent to-transparent transform -rotate-45"
+          style={{ top: '60%', left: '-15%' }}
+        ></div>
+      </div>
+
+      {/* Faixas diagonais - Azul */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+        <div 
+          className="absolute w-[150%] h-[25%] bg-gradient-to-l from-blue-600/20 via-blue-500/10 to-transparent transform rotate-45"
+          style={{ top: '-5%', right: '-20%' }}
+        ></div>
+        <div 
+          className="absolute w-[150%] h-[30%] bg-gradient-to-l from-blue-500/15 via-blue-400/5 to-transparent transform rotate-45"
+          style={{ top: '40%', right: '-25%' }}
+        ></div>
+        <div 
+          className="absolute w-[150%] h-[20%] bg-gradient-to-l from-blue-600/10 via-transparent to-transparent transform rotate-45"
+          style={{ top: '75%', right: '-15%' }}
+        ></div>
+      </div>
+
+      {/* Nebulosas */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       
       <div className="relative max-w-[900px] mx-auto px-6 z-10">
         {/* Hero Section */}
@@ -121,11 +173,11 @@ export default function Home() {
           {/* Coluna da direita - Avatar */}
           <div className="flex-1 flex justify-center items-center">
             <div className="relative group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 to-blue-400/20 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
               <div className="absolute inset-0 rounded-full border border-blue-500/30 animate-pulse"></div>
               <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden bg-gradient-to-br from-blue-950/50 to-black border-2 border-blue-500/30 shadow-2xl shadow-blue-500/20">
                 <img 
-                  src="/foto.jpeg"
+                  src="/foto.png"
                   alt="foto de perfil - Full Stack Developer"
                   className="w-full h-full object-cover object-center"
                 />
@@ -143,7 +195,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Minhas <span className="text-blue-400">Skills</span>
             </h2>
-            <div className="w-20 h-1 bg-blue-500 mx-auto rounded-full"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto rounded-full"></div>
           </div>
           <SkillsCarousel />
         </div>
@@ -154,7 +206,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Meus <span className="text-blue-400">Projetos</span>
             </h2>
-            <div className="w-20 h-1 bg-blue-500 mx-auto rounded-full"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto rounded-full"></div>
           </div>
           <ProjectsCarousel projects={projects} />
         </div>
@@ -228,6 +280,16 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes twinkle {
+          0%, 100% { opacity: 0.3; } 
+          50% { opacity: 1; }
+        }
+        .animate-twinkle {
+          animation: twinkle ease-in-out infinite;
+        }
+      `}</style>
     </main>
   )
 }

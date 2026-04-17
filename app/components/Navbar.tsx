@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Navbar() {
   return (
-    <header className="w-full border-b-2 border-blue-500/60 bg-black/80 backdrop-blur-md sticky top-0 z-50">
+    <header className="w-full border-b-2 border-blue-500/60 bg-[#0a0a0a] backdrop-blur-md sticky top-0 z-50">
       <nav className="max-w-[900px] mx-auto px-6 py-5 flex items-center justify-between">
     
         <div className="flex items-center gap-2">
