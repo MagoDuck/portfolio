@@ -49,7 +49,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
         
         return nextIndex
       })
-    }, 9000)
+    }, 8000)
     
     return () => clearInterval(interval)
   }, [totalSlides])
